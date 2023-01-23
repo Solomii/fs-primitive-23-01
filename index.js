@@ -53,6 +53,39 @@ const p =
 
 if (p.includes(".")) {
     const posDote = p.indexOf(".");
-    const pArr = p.substring(0,posDote).split(" ");
+    const pArr = p.substring(0, posDote).split(" ");
     console.log(pArr);
 }
+
+// написати функцію яка буде приймати рядок і форматувати його до Jaden Case і повертати новий відформатований рядок
+// "To Be Or Not To Be"
+const strTask = "tO bE OR nOT to Be";
+
+const stringJadenCase = (strTask, separator = " ") => {
+    return strTask
+        .trim()
+        .toLowerCase()
+        .split(separator) //array
+        .filter((word) => word !== "")
+        // .filter((word) => word === word)
+        .map((word) => word[0].toUpperCase() + word.slice(1))
+        .join(separator);
+};
+
+console.log(stringJadenCase(strTask));
+
+// const stringJadenCase = (strTask)=> {
+//   const newStr = strTask.trim().toLowerCase();
+
+//   const words = newStr.split(" ");
+
+//   const newWords = words.map((word) => {
+//    return word[0].toUpperCase() + word.slice(1)
+//   })
+
+//   const readyStr = newWords.join(" ")
+
+//   return readyStr;
+// }
+
+// console.log(stringJadenCase(strTask))
